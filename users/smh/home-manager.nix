@@ -44,7 +44,7 @@ in {
     pkgs.watch
 
     pkgs.gopls
-    pkgs.zigpkgs."0.13.0"
+    # pkgs.zigpkgs."0.13.0"
 
     # Node is required for Copilot.vim
     pkgs.nodejs
@@ -86,13 +86,13 @@ in {
     "rofi/config.rasi".text = builtins.readFile ./rofi;
 
     # tree-sitter parsers
-    "nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
-    "nvim/queries/proto/folds.scm".source =
-      "${sources.tree-sitter-proto}/queries/folds.scm";
-    "nvim/queries/proto/highlights.scm".source =
-      "${sources.tree-sitter-proto}/queries/highlights.scm";
-    "nvim/queries/proto/textobjects.scm".source =
-      ./textobjects.scm;
+    # "nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
+    # "nvim/queries/proto/folds.scm".source =
+    #   "${sources.tree-sitter-proto}/queries/folds.scm";
+    # "nvim/queries/proto/highlights.scm".source =
+    #   "${sources.tree-sitter-proto}/queries/highlights.scm";
+    # "nvim/queries/proto/textobjects.scm".source =
+    #   ./textobjects.scm;
   } // (if isDarwin then {
     # Rectangle.app. This has to be imported manually using the app.
     "rectangle/RectangleConfig.json".text = builtins.readFile ./RectangleConfig.json;
@@ -133,7 +133,7 @@ in {
       whitelist = {
         prefix= [
           "$HOME/code/go/src/github.com/hashicorp"
-          "$HOME/code/go/src/github.com/mitchellh"
+          "$HOME/code/go/src/github.com/smh"
         ];
 
         exact = ["$HOME/.envrc"];
@@ -184,8 +184,8 @@ in {
 
   programs.git = {
     enable = true;
-    userName = "Mitchell Hashimoto";
-    userEmail = "m@mitchellh.com";
+    userName = "Stein Martin Hustad";
+    userEmail = "smh@hustad.com";
     signing = {
       key = "523D5DC389D273BC";
       signByDefault = true;
@@ -200,7 +200,7 @@ in {
       color.ui = true;
       core.askPass = ""; # needs to be empty to use terminal for ask pass
       credential.helper = "store"; # want to make this more secure
-      github.user = "mitchellh";
+      github.user = "smh";
       push.default = "tracking";
       init.defaultBranch = "main";
     };
@@ -209,7 +209,7 @@ in {
   programs.go = {
     enable = true;
     goPath = "code/go";
-    goPrivate = [ "github.com/mitchellh" "github.com/hashicorp" "rfc822.mx" ];
+    goPrivate = [ "github.com/smh" "github.com/hashicorp" "rfc822.mx" ];
   };
 
   programs.jujutsu = {
@@ -281,49 +281,49 @@ in {
 
   programs.neovim = {
     enable = true;
-    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+    # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
-    withPython3 = true;
+    # withPython3 = true;
 
-    plugins = with pkgs; [
-      customVim.vim-copilot
-      customVim.vim-cue
-      customVim.vim-fish
-      customVim.vim-glsl
-      customVim.vim-misc
-      customVim.vim-pgsql
-      customVim.vim-tla
-      customVim.vim-zig
-      customVim.pigeon
-      customVim.AfterColors
+    # plugins = with pkgs; [
+    #   customVim.vim-copilot
+    #   customVim.vim-cue
+    #   customVim.vim-fish
+    #   customVim.vim-glsl
+    #   customVim.vim-misc
+    #   customVim.vim-pgsql
+    #   customVim.vim-tla
+    #   customVim.vim-zig
+    #   customVim.pigeon
+    #   customVim.AfterColors
 
-      customVim.vim-nord
-      customVim.nvim-comment
-      customVim.nvim-conform
-      customVim.nvim-dressing
-      customVim.nvim-gitsigns
-      customVim.nvim-lualine
-      customVim.nvim-lspconfig
-      customVim.nvim-nui
-      customVim.nvim-plenary # required for telescope
-      customVim.nvim-telescope
-      customVim.nvim-treesitter
-      customVim.nvim-treesitter-playground
-      customVim.nvim-treesitter-textobjects
+    #   customVim.vim-nord
+    #   customVim.nvim-comment
+    #   customVim.nvim-conform
+    #   customVim.nvim-dressing
+    #   customVim.nvim-gitsigns
+    #   customVim.nvim-lualine
+    #   customVim.nvim-lspconfig
+    #   customVim.nvim-nui
+    #   customVim.nvim-plenary # required for telescope
+    #   customVim.nvim-telescope
+    #   customVim.nvim-treesitter
+    #   customVim.nvim-treesitter-playground
+    #   customVim.nvim-treesitter-textobjects
 
-      vimPlugins.vim-eunuch
-      vimPlugins.vim-markdown
-      vimPlugins.vim-nix
-      vimPlugins.typescript-vim
-      vimPlugins.nvim-treesitter-parsers.elixir
-    ] ++ (lib.optionals (!isWSL) [
-      # This is causing a segfaulting while building our installer
-      # for WSL so just disable it for now. This is a pretty
-      # unimportant plugin anyway.
-      customVim.nvim-web-devicons
-    ]);
+    #   vimPlugins.vim-eunuch
+    #   vimPlugins.vim-markdown
+    #   vimPlugins.vim-nix
+    #   vimPlugins.typescript-vim
+    #   vimPlugins.nvim-treesitter-parsers.elixir
+    # ] ++ (lib.optionals (!isWSL) [
+    #   # This is causing a segfaulting while building our installer
+    #   # for WSL so just disable it for now. This is a pretty
+    #   # unimportant plugin anyway.
+    #   customVim.nvim-web-devicons
+    # ]);
 
-    extraConfig = (import ./vim-config.nix) { inherit sources; };
+    # extraConfig = (import ./vim-config.nix) { inherit sources; };
   };
 
   services.gpg-agent = {

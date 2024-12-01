@@ -693,13 +693,13 @@
       "locked": {
         "lastModified": 1724607677,
         "narHash": "sha256-XLgxBcRy5w0jYTUh66md24FD91YOy398eulo+jHXB0s=",
-        "owner": "mitchellh",
+        "owner": "smh",
         "repo": "vim-misc",
         "rev": "5c7d6fd5cb250c4dec6d86ae582e84cc066129be",
         "type": "github"
       },
       "original": {
-        "owner": "mitchellh",
+        "owner": "smh",
         "repo": "vim-misc",
         "type": "github"
       }
@@ -713,13 +713,13 @@
       "locked": {
         "lastModified": 1717848532,
         "narHash": "sha256-d+xIUvSTreHl8pAmU1fnmkfDTGQYCn2Rb/zOwByxS2M=",
-        "owner": "mitchellh",
+        "owner": "smh",
         "repo": "zig-overlay",
         "rev": "02fc5cc555fc14fda40c42d7c3250efa43812b43",
         "type": "github"
       },
       "original": {
-        "owner": "mitchellh",
+        "owner": "smh",
         "repo": "zig-overlay",
         "type": "github"
       }

@@ -203,30 +203,6 @@
         "url": "https://github.com/tmux-plugins/tmux-pain-control/archive/2db63de3b08fc64831d833240749133cecb67d92.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "tree-sitter-hcl": {
-        "branch": "main",
-        "description": "A tree-sitter grammar for HCL (HashiCorp Configuration Language), used by projects such as Terraform.",
-        "homepage": "",
-        "owner": "mitchellh",
-        "repo": "tree-sitter-hcl",
-        "rev": "e01cf34478d5869209a7b1a80a12e63b40952754",
-        "sha256": "08hk1h93qjndfs5gi5ggsl0sbssq4s4dgx2890pwg4h6l2x1m3xz",
-        "type": "tarball",
-        "url": "https://github.com/mitchellh/tree-sitter-hcl/archive/e01cf34478d5869209a7b1a80a12e63b40952754.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "tree-sitter-proto": {
-        "branch": "main",
-        "description": "A tree-sitter grammar for protocol buffer files (proto3).",
-        "homepage": null,
-        "owner": "mitchellh",
-        "repo": "tree-sitter-proto",
-        "rev": "42d82fa18f8afe59b5fc0b16c207ee4f84cb185f",
-        "sha256": "001y2z2683fagryqj5f0gs3rcgx2nbw3x3r9afydhss80ihb8zvi",
-        "type": "tarball",
-        "url": "https://github.com/mitchellh/tree-sitter-proto/archive/42d82fa18f8afe59b5fc0b16c207ee4f84cb185f.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "vim-copilot": {
         "branch": "release",
         "description": "Neovim plugin for GitHub Copilot",
@@ -309,18 +285,6 @@
         "sha256": "051f0q5bkgp77pz0izh5mvqsmxy0rzlvriwq4j7qzslqk7i850p2",
         "type": "tarball",
         "url": "https://github.com/tikhomirov/vim-glsl/archive/28a6dfbcd96095226bee90985b7f12c5679dbbb6.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "vim-misc": {
-        "branch": "master",
-        "description": "My Vim configuration files.",
-        "homepage": null,
-        "owner": "mitchellh",
-        "repo": "vim-misc",
-        "rev": "ca7946cbecc2d63a7c83ad0a894d8c2653fd1963",
-        "sha256": "0bq3i36dnrl3c3xx09ny7mrdz30sp5c9yiaqi2f68sy0vj6qlga4",
-        "type": "tarball",
-        "url": "https://github.com/mitchellh/vim-misc/archive/ca7946cbecc2d63a7c83ad0a894d8c2653fd1963.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-nord": {
