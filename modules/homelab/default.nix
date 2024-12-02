@@ -6,11 +6,11 @@ in {
   options.services.homelab = with lib; {
     enable = mkEnableOption "homelab services";
     
-    mediaPath = mkOption {
-      type = types.str;
-      default = "/data/media";
-      description = "Base path for media storage";
-    };
+    # mediaPath = mkOption {
+    #   type = types.str;
+    #   default = "/data/media";
+    #   description = "Base path for media storage";
+    # };
   };
 
   config = lib.mkIf cfg.enable {

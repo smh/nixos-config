@@ -25,9 +25,9 @@
 
   services.homelab = {
     enable = true;
-    nfsServer = "blackhole.lan";
-    nfsShare = "/data/media";
-    mediaPath = "/mnt/media";
+    # nfsServer = "blackhole.lan";
+    # nfsShare = "/data/media";
+    # mediaPath = "/mnt/media";
   };
 
   # nixarr = {
