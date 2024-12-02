@@ -113,7 +113,6 @@ in {
 
     users.users.media = {
       uid = 2000;
-      gid = 2000;
     };
 
     # users.users = {
