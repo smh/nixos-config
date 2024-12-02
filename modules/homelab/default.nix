@@ -107,6 +107,10 @@ in {
     };
 
     # Create shared media group and add service users to it
+    users.groups.media = {
+      gid = 2000;
+    };
+
     users.users.media = {
       uid = 2000;
       gid = 2000;
