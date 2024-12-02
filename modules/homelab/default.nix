@@ -34,7 +34,7 @@ in {
     
     # NFS mount configuration
     fileSystems = {
-      /data/media/Movies = {
+      "/data/media/Movies" = {
         device = "blackhole.lan:/data/media/Movies";
         fsType = "nfs";
         options = [
@@ -47,7 +47,7 @@ in {
           "x-systemd.idle-timeout=600"  # Unmount after 10 minutes of inactivity
         ];
       };
-      /data/media/Tv = {
+      "/data/media/Tv" = {
         device = "blackhole.lan:/data/media/Tv";
         fsType = "nfs";
         options = [
