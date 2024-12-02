@@ -8,18 +8,8 @@ in {
     
     mediaPath = mkOption {
       type = types.str;
-      default = "/mnt/media";
+      default = "/data/media";
       description = "Base path for media storage";
-    };
-
-    nfsServer = mkOption {
-      type = types.str;
-      description = "NFS server hostname or IP";
-    };
-
-    nfsShare = mkOption {
-      type = types.str;
-      description = "NFS share path on server";
     };
   };
 
@@ -33,7 +23,7 @@ in {
       prowlarr
       sabnzbd
       nzbhydra2
-      
+
       # Support tools
       ffmpeg
       mediainfo
@@ -43,18 +33,33 @@ in {
     services.rpcbind.enable = true;
     
     # NFS mount configuration
-    fileSystems.${cfg.mediaPath} = {
-      device = "${cfg.nfsServer}:${cfg.nfsShare}";
-      fsType = "nfs";
-      options = [
-        "nofail"          # Don't fail boot if mount fails
-        "soft"            # Return errors rather than hang
-        "timeo=15"        # Timeout after 15 seconds
-        "retrans=2"       # Number of retries before failure
-        "rw"             # Mount read-write
-        "x-systemd.automount"  # Automount on access
-        "x-systemd.idle-timeout=600"  # Unmount after 10 minutes of inactivity
-      ];
+    fileSystems = {
+      /data/media/Movies = {
+        device = "blackhole.lan:/data/media/Movies";
+        fsType = "nfs";
+        options = [
+          "nofail"          # Don't fail boot if mount fails
+          "soft"            # Return errors rather than hang
+          "timeo=15"        # Timeout after 15 seconds
+          "retrans=2"       # Number of retries before failure
+          "rw"             # Mount read-write
+          "x-systemd.automount"  # Automount on access
+          "x-systemd.idle-timeout=600"  # Unmount after 10 minutes of inactivity
+        ];
+      };
+      /data/media/Tv = {
+        device = "blackhole.lan:/data/media/Tv";
+        fsType = "nfs";
+        options = [
+          "nofail"          # Don't fail boot if mount fails
+          "soft"            # Return errors rather than hang
+          "timeo=15"        # Timeout after 15 seconds
+          "retrans=2"       # Number of retries before failure
+          "rw"             # Mount read-write
+          "x-systemd.automount"  # Automount on access
+          "x-systemd.idle-timeout=600"  # Unmount after 10 minutes of inactivity
+        ];
+      };
     };
 
     # Enable and configure media services
@@ -83,9 +88,9 @@ in {
 
       prowlarr = {
         enable = true;
-        user = "prowlarr";
-        group = "prowlarr";
-        dataDir = "/var/lib/prowlarr";
+        # user = "prowlarr";
+        # group = "prowlarr";
+        # dataDir = "/var/lib/prowlarr";
       };
     };
 
@@ -102,18 +107,18 @@ in {
     };
 
     # Create shared media group and add service users to it
-    users.groups.media = {};
+    # users.groups.media = {};
 
-    users.users = {
-      plex.extraGroups = [ "media" ];
-      sonarr.extraGroups = [ "media" ];
-      radarr.extraGroups = [ "media" ];
-      prowlarr.extraGroups = [ "media" ];
-    };
+    # users.users = {
+    #   plex.extraGroups = [ "media" ];
+    #   sonarr.extraGroups = [ "media" ];
+    #   radarr.extraGroups = [ "media" ];
+    #   # prowlarr.extraGroups = [ "media" ];
+    # };
 
     # Ensure media directory has correct permissions
     systemd.tmpfiles.rules = [
-      "d ${cfg.mediaPath} 0775 root media - -"
+      "d /data/media 0775 root media - -"
     ];
   };
 }

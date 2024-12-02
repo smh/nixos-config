@@ -2,7 +2,7 @@
   imports = [
     ./hardware/vm-aarch64.nix
     ../modules/vmware-guest.nix
-    ../modules/homelab.nix
+    ../modules/homelab
     ./vm-shared.nix
   ];
 
@@ -29,6 +29,19 @@
     nfsShare = "/data/media";
     mediaPath = "/mnt/media";
   };
+
+  # nixarr = {
+  #   enable = true;
+  #   mediaDir = "/mnt/media";
+  #   stateDir = "/var/lib/nixarr/.state";
+
+
+  #   prowlarr.enable = true;
+  #   radarr.enable = true;
+  #   readarr.enable = true;
+  #   sonarr.enable = true;
+  # };
+
 
   # Share our host filesystem
   fileSystems."/host" = {
