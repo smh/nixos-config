@@ -68,21 +68,21 @@ in {
         enable = true;
         openFirewall = true;
         user = "plex";
-        group = "plex";
+        group = "media";
         dataDir = "/var/lib/plex";
       };
 
       sonarr = {
         enable = true;
         user = "sonarr";
-        group = "sonarr";
+        group = "media";
         dataDir = "/var/lib/sonarr";
       };
 
       radarr = {
         enable = true;
         user = "radarr";
-        group = "radarr";
+        group = "media";
         dataDir = "/var/lib/radarr";
       };
 
@@ -107,7 +107,9 @@ in {
     };
 
     # Create shared media group and add service users to it
-    # users.groups.media = {};
+    users.groups.media = {
+      gid = 2000;
+    };
 
     # users.users = {
     #   plex.extraGroups = [ "media" ];
