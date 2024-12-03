@@ -74,21 +74,21 @@ in {
 
       sonarr = {
         enable = true;
-        user = "media";
-        # group = "media";
+        user = "sonarr";
+        group = "media";
         dataDir = "/var/lib/sonarr";
       };
 
       radarr = {
         enable = true;
-        user = "media";
-        # group = "media";
+        user = "radarr";
+        group = "media";
         dataDir = "/var/lib/radarr";
       };
 
       prowlarr = {
         enable = true;
-        # user = "prowlarr";
+        user = "prowlarr";
         # group = "prowlarr";
         # dataDir = "/var/lib/prowlarr";
       };
