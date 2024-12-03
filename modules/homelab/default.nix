@@ -88,7 +88,7 @@ in {
 
       prowlarr = {
         enable = true;
-        user = "prowlarr";
+        # user = "prowlarr";
         # group = "prowlarr";
         # dataDir = "/var/lib/prowlarr";
       };
