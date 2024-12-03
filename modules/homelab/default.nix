@@ -34,21 +34,8 @@ in {
     
     # NFS mount configuration
     fileSystems = {
-      "/data/media/Movies" = {
-        device = "blackhole.lan:/data/media/Movies";
-        fsType = "nfs";
-        options = [
-          "nofail"          # Don't fail boot if mount fails
-          "soft"            # Return errors rather than hang
-          "timeo=15"        # Timeout after 15 seconds
-          "retrans=2"       # Number of retries before failure
-          "rw"             # Mount read-write
-          "x-systemd.automount"  # Automount on access
-          "x-systemd.idle-timeout=600"  # Unmount after 10 minutes of inactivity
-        ];
-      };
-      "/data/media/Tv" = {
-        device = "blackhole.lan:/data/media/Tv";
+      "/data" = {
+        device = "blackhole.lan:/data";
         fsType = "nfs";
         options = [
           "nofail"          # Don't fail boot if mount fails
@@ -88,9 +75,10 @@ in {
 
       prowlarr = {
         enable = true;
-        # user = "prowlarr";
-        # group = "prowlarr";
-        # dataDir = "/var/lib/prowlarr";
+      };
+
+      jellyseerr = {
+        enable = true;
       };
     };
 
