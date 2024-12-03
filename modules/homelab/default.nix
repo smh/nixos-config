@@ -111,10 +111,10 @@ in {
       gid = 2000;
     };
 
-    users.users.media = {
-      uid = 2000;
-      group = "media";
-    };
+    # users.users.media = {
+    #   uid = 2000;
+    #   group = "media";
+    # };
 
     # users.users = {
     #   plex.extraGroups = [ "media" ];
