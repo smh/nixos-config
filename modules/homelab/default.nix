@@ -67,8 +67,8 @@ in {
       plex = {
         enable = true;
         openFirewall = true;
-        user = "media";
-        # group = "media";
+        user = "plex";
+        group = "media";
         dataDir = "/var/lib/plex";
       };
 
