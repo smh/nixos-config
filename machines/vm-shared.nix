@@ -11,7 +11,6 @@ in {
 
   nix = {
     package = pkgs.nixVersions.latest;
-    trustedUsers = [ "root" "@wheel" ];
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -24,6 +23,7 @@ in {
     settings = {
       substituters = ["https://smh-nixos-config.cachix.org"];
       trusted-public-keys = ["smh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ="];
+      trustedUsers = [ "root" "@wheel" ];
     };
   };
 
