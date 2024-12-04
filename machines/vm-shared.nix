@@ -11,7 +11,7 @@ in {
 
   nix = {
     package = pkgs.nixVersions.latest;
-    trusted-users = [ "root" "@wheel" ];
+    trustedUsers = [ "root" "@wheel" ];
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
