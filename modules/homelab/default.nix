@@ -113,7 +113,7 @@ in {
 
     # Ensure media directory has correct permissions
     systemd.tmpfiles.rules = [
-      "d /data/media 0775 root media - -"
+      "d /data 0775 root media - -"
     ];
   };
 }
